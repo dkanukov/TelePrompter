@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" utf>
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/style.css">
+    <title>Tele Prompter</title>
+</head>
+
+<body>
+    <textarea class="form-control" id="contentInput" cols="50" rows="20" autofocus
+        placeholder="Введите текст"></textarea>
+    <button class="md-trigger" id="btn-start" type="submit">Начать запись</button>
+
+    <div class="modal">
+
+        <ul class="control-buttons">
+            <li><button type="submit" id="start">Start</button></li>
+            <li><button type="submit" id="stop">Stop</button></li>
+            <li>
+                <label for="speed">Скорость</label>
+                <input type="number" id="speed" value="12" step="1" min="1" max="50">
+            </li>
+            <li>
+                <label for="font">Шрифт</label>
+                <input type="number" id="font" value="10" step="1" min="1" max="20">
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+.form-control{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 50px;
+}
+
+.md-trigger{
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top: 5px;
+}
+
+/* .modal{
+   visibility: hidden;
+} */
+
+.control-buttons{
+   list-style: none;
+   display: flex;
+   justify-content: space-around;
+}
