@@ -12,9 +12,19 @@
    margin-top: 5px;
 }
 
-/* .modal{
-   visibility: hidden;
-} */
+.modal{
+   /* visibility: hidden; */
+   margin: auto;
+   position: fixed;
+   background-color: black;
+   width: 100%;
+   height: 100%;
+   color: white;
+}
+
+.modal-show{
+   visibility: visible;
+}
 
 .control-buttons{
    list-style: none;
