@@ -3,23 +3,23 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" utf>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style/normalize.css">
     <link rel="stylesheet" href="./style/style.css">
     <title>Tele Prompter</title>
 </head>
 
 <body>
-    <textarea class="form-control" id="contentInput" cols="50" rows="20" autofocus
-        placeholder="Введите текст"></textarea>
-    <button class="md-trigger" id="btn-start" type="submit">Начать запись</button>
+    <textarea class="form-control" id="content-input" cols="50" rows="20" autofocus
+        placeholder="Введите текст">dsadada</textarea>
+    <button class="md-trigger" id="btn-start" type="button">Начать сессию</button>
 
-    <div class="modal">
+    <div class="modal" id="modal">
 
         <ul class="control-buttons">
-            <li><button type="submit" id="exit">Exit</button></li>
-            <li><button type="submit" id="start">Start</button></li>
-            <li><button type="submit" id="stop">Stop</button></li>
+            <li><button type="button" id="exit">Exit</button></li>
+            <li><button type="button" id="start">Start</button></li>
+            <li><button type="button" id="stop">Stop</button></li>
             <li>
                 <label for="speed">Скорость</label>
                 <input type="number" id="speed" value="12" step="1" min="1" max="50">
@@ -28,12 +28,16 @@
                 <label for="font">Шрифт</label>
                 <input type="number" id="font" value="10" step="1" min="1" max="20">
             </li>
-            <li><input type="color" id="color"></li>
+            <li>
+                <label for="color">Цвет</label>
+                <input type="color" id="color">
+            </li>
         </ul>
-        <div class="textcontent">
-            
+        <div id="prompter-container" class="prompter-container">
+
         </div>
     </div>
+    <script defer src = "./js/index.js"></script>
 </body>
 
 </html>
