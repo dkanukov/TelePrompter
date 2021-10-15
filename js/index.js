@@ -8,7 +8,8 @@
     let btnSpeed = document.getElementById('speed')
     let btnStop = document.getElementById('stop');
     let btnFont = document.getElementById('font');
-    let size = 120;
+    let fontColorBtn = document.getElementById('font-color');
+    let bgColorBtn = document.getElementById('bg-color');
     let defSpeed = 50;
     let clicked = 0;
     let move = 0;
@@ -55,6 +56,19 @@
 
     });
 
+
+    btnFont.addEventListener('change', function (){
+        promptContainer.style.fontSize = btnFont.value.toString() + 'em';
+        console.log('lol');
+    });
+
+    fontColorBtn.addEventListener('change', function (){
+        promptContainer.style.color = fontColorBtn.value;
+    });
+
+    bgColorBtn.addEventListener('change', function (){
+        modal.style.backgroundColor = bgColorBtn.value;
+    });
 
 
 //
