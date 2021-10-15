@@ -10,6 +10,7 @@
     let btnFont = document.getElementById('font');
     let fontColorBtn = document.getElementById('font-color');
     let bgColorBtn = document.getElementById('bg-color');
+    let restartBtn = document.getElementById('restart');
     let defSpeed = 50;
     let clicked = 0;
     let move = 0;
@@ -70,43 +71,8 @@
         modal.style.backgroundColor = bgColorBtn.value;
     });
 
+    restartBtn.addEventListener('click', function (){
+       move = 0;
+    });
 
-//
-//     btnSession.addEventListener('click', function (){
-//         if (contentInput.value){
-//             modal.classList.add('modal-show')
-//             promptContainer.innerHTML = contentInput.value.replace(/\n/g, '<br/>');
-//         }
-//         else{
-//             alert("вы ничего не читаете :(");
-//         }
-//
-//     });
-//
-//     btnStart.addEventListener('click', function (){
-//             let timeId = setInterval(scroll, defSpeed);
-//             btnSpeed.addEventListener('change', function (){
-//                 defSpeed = 100 - btnSpeed.value;
-//                 clearInterval(timeId);
-//                 timeId = setInterval(scroll, defSpeed);
-//             });
-//             btnStop.addEventListener('click', function (){
-//                clearInterval(timeId);
-//             });
-//             function scroll() {
-//                 promptContainer.style.transform = 'translateY(' + move + 'px)';
-//                 move--;
-//             }
-//     });
-//
-//     btnFont.addEventListener('change', function (){
-//         console.log(size);
-//         size = size + btnFont.value;
-//         promptContainer.setAttribute('style', 'font-size:' + size + 'px');
-//     });
-//
-//     btnExit.addEventListener('click', function (){
-//         modal.classList.remove('modal-show');
-//     });
-//
 })();

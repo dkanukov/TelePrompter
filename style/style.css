@@ -29,10 +29,21 @@
 }
 
 .control-buttons{
+   position: relative;
+   background-color: black;
    list-style: none;
    display: flex;
    justify-content: space-around;
 }
+
+/*.control-buttons button,*/
+/*.control-buttons select,*/
+/*.control-buttons input{*/
+/*   cursor: pointer;*/
+/*   border: 1px solid wheat;*/
+/*   background-color: orange;*/
+
+/*}*/
 
 .prompter-container{
    color: white;
