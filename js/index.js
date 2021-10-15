@@ -7,41 +7,92 @@
     let btnStart = document.getElementById('start');
     let btnSpeed = document.getElementById('speed')
     let btnStop = document.getElementById('stop');
-    let play;
-    let speed = 50;
+    let btnFont = document.getElementById('font');
+    let size = 120;
+    let defSpeed = 50;
+    let clicked = 0;
     let move = 0;
 
     btnSession.addEventListener('click', function (){
-        if (contentInput.value){
-            modal.classList.add('modal-show')
-            promptContainer.innerHTML = contentInput.value.replace(/\n/g, '<br/>');
-        }
-        else{
-            alert("вы ничего не читаете :(");
-        }
-
+       if (contentInput.value){
+           modal.classList.add('modal-show');
+           promptContainer.innerHTML = contentInput.value.replace(/\n/g, '<br/>');
+       }
+       else
+           alert('Нет текста!');
     });
+
+    function scroll() {
+        promptContainer.style.transform = 'translateY(' + move + 'px)';
+        move -= 1;
+    }
+
+    function stopScroll(timeId) {
+        clearInterval(timeId);
+        clicked = 0;
+    }
 
     btnStart.addEventListener('click', function (){
-            let timeId = setInterval(scroll, speed);
-            btnSpeed.addEventListener('change', function (){
-                speed = 100 - btnSpeed.value;
-                clearInterval(timeId);
-                timeId = setInterval(scroll, speed);
-            });
-            btnStop.addEventListener('click', function (){
-               console.log('stop');
-               clearInterval(timeId);
-            });
-            function scroll() {
-                promptContainer.style.transform = 'translateY(' + move + 'px)';
-                move--;
-            }
+        if (clicked === 0){
+            var timeId = setInterval(scroll, defSpeed);
+            clicked++;
+        }
+
+        btnStop.addEventListener('click', function (){
+            stopScroll(timeId);
+        });
+
+        btnExit.addEventListener('click', function (){
+           stopScroll(timeId);
+           modal.classList.remove('modal-show');
+        });
+
+        btnSpeed.addEventListener('change', function (){
+           clearInterval(timeId);
+           let currentSpeed = defSpeed * btnSpeed.value;
+           timeId = setInterval(scroll, currentSpeed);
+        });
+
     });
 
-    btnExit.addEventListener('click', function (){
-        modal.classList.remove('modal-show');
-    });
 
 
+//
+//     btnSession.addEventListener('click', function (){
+//         if (contentInput.value){
+//             modal.classList.add('modal-show')
+//             promptContainer.innerHTML = contentInput.value.replace(/\n/g, '<br/>');
+//         }
+//         else{
+//             alert("вы ничего не читаете :(");
+//         }
+//
+//     });
+//
+//     btnStart.addEventListener('click', function (){
+//             let timeId = setInterval(scroll, defSpeed);
+//             btnSpeed.addEventListener('change', function (){
+//                 defSpeed = 100 - btnSpeed.value;
+//                 clearInterval(timeId);
+//                 timeId = setInterval(scroll, defSpeed);
+//             });
+//             btnStop.addEventListener('click', function (){
+//                clearInterval(timeId);
+//             });
+//             function scroll() {
+//                 promptContainer.style.transform = 'translateY(' + move + 'px)';
+//                 move--;
+//             }
+//     });
+//
+//     btnFont.addEventListener('change', function (){
+//         console.log(size);
+//         size = size + btnFont.value;
+//         promptContainer.setAttribute('style', 'font-size:' + size + 'px');
+//     });
+//
+//     btnExit.addEventListener('click', function (){
+//         modal.classList.remove('modal-show');
+//     });
+//
 })();
