@@ -13,7 +13,7 @@
     let restartBtn = document.getElementById('restart');
     let defSpeed = 50;
     let clicked = 0;
-    let move = 0;
+    let move = 100;
 
     btnSession.addEventListener('click', function (){
        if (contentInput.value){
@@ -60,11 +60,11 @@
 
     btnFont.addEventListener('change', function (){
         promptContainer.style.fontSize = btnFont.value.toString() + 'em';
-        console.log('lol');
     });
 
     fontColorBtn.addEventListener('change', function (){
         promptContainer.style.color = fontColorBtn.value;
+        promptContainer.style.transform = 'translateY(' + move + 'px)';
     });
 
     bgColorBtn.addEventListener('change', function (){
@@ -72,7 +72,10 @@
     });
 
     restartBtn.addEventListener('click', function (){
-       move = 0;
+        move = 100;
+        promptContainer.style.transform = 'translateY(' + move + 'px)';
+
+
     });
 
 })();
