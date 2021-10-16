@@ -32,7 +32,7 @@
 
 .control-buttons{
    margin-top: 0px;
-   background-color: red;
+   background-color: black;
    list-style: none;
    display: flex;
    justify-content: space-around;
