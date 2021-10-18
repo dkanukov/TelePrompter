@@ -13,6 +13,7 @@
     let restartBtn = document.getElementById('restart');
     let defSpeed = 50;
     let clicked = 0;
+    let speedChange = 0;
     let move = 100;
 
     btnSession.addEventListener('click', function (){
@@ -35,8 +36,12 @@
     }
 
     btnStart.addEventListener('click', function (){
-        if (clicked === 0){
+        if (clicked === 0 && speedChange == 0){
             var timeId = setInterval(scroll, defSpeed);
+            clicked++;
+        }
+        else{
+            var timeId = setInterval(scroll, defSpeed * btnSpeed.value);
             clicked++;
         }
 
@@ -51,8 +56,9 @@
 
         btnSpeed.addEventListener('change', function (){
            clearInterval(timeId);
-           let currentSpeed = defSpeed * btnSpeed.value;
+           var currentSpeed = defSpeed * btnSpeed.value;
            timeId = setInterval(scroll, currentSpeed);
+           speedChange++;
         });
 
     });
