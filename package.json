@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+	"install": "npm install -g browser-sync",
 	"serve": "browser-sync start --server --files *.html *.js *.css"
   },
   "repository": {
